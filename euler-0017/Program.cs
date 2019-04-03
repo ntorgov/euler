@@ -27,6 +27,9 @@ namespace euler_0017
 			list.Add(new Words() { Word = "Nine", Number = 9 });
 			list.Add(new Words() { Word = "Ten", Number = 10 });
 
+			list.Add(new Words() { Word = "Elleven", Number = 11 });
+			list.Add(new Words() { Word = "Twelve", Number = 12 });
+
 			#endregion
 
 			Console.WriteLine("Hello World!");
