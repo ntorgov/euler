@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler", "euler\euler.csproj", "{753E3138-4AC2-4B8E-B538-F4859A0D342E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler", "euler\euler.csproj", "{753E3138-4AC2-4B8E-B538-F4859A0D342E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0008", "..\euler-0008\euler-0008\euler-0008.csproj", "{D983A936-1E10-4D7A-ACB8-BC445B02E39E}"
 EndProject
@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0015", "..\euler-0015
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0016", "..\euler-0016\euler-0016\euler-0016.csproj", "{976AC111-0C5C-4B14-90BD-04DAEF6A574D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0017", "euler-0017\euler-0017.csproj", "{4F355FC3-F17E-4EE3-9369-0E7708745FEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0017", "euler-0017\euler-0017.csproj", "{4F355FC3-F17E-4EE3-9369-0E7708745FEA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "euler-0001", "euler-0001\euler-0001.fsproj", "{282222AF-8715-4703-95EC-A8916CCDC81E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,14 @@ Global
 		{4F355FC3-F17E-4EE3-9369-0E7708745FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F355FC3-F17E-4EE3-9369-0E7708745FEA}.Release|x64.ActiveCfg = Release|Any CPU
 		{4F355FC3-F17E-4EE3-9369-0E7708745FEA}.Release|x64.Build.0 = Release|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Debug|x64.Build.0 = Debug|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|x64.ActiveCfg = Release|Any CPU
+		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
