@@ -14,6 +14,8 @@ namespace euler_0017
 		private static List<Words> list;
 		static void Main(string[] args)
 		{
+			list = new List<Words>();
+
 			#region Числа до 10
 
 			list.Add(new Words() { Word = "One", Number = 1 });
@@ -30,12 +32,21 @@ namespace euler_0017
 			list.Add(new Words() { Word = "Elleven", Number = 11 });
 			list.Add(new Words() { Word = "Twelve", Number = 12 });
 
+			list.Add(new Words() { Word = "Twenty", Number = 20 });
+			list.Add(new Words() { Word = "Thrity", Number = 30 });
+			list.Add(new Words() { Word = "Forty", Number = 40 });
+			list.Add(new Words() { Word = "Fifty", Number = 50 });
+			list.Add(new Words() { Word = "Sixty", Number = 60 });
+			list.Add(new Words() { Word = "Seventy", Number = 70 });
+
 			#endregion
+
+			Parser(123);
 
 			Console.WriteLine("Hello World!");
 		}
 
-		public void Parser(int Number)
+		public static void Parser(int Number)
 		{
 			string Value = Number.ToString();
 			int Length = Value.Length;
@@ -67,15 +78,30 @@ namespace euler_0017
 			}
 			else
 			{
-				var digitalWord = "";
-				foreach(var word in list)
+				foreach (var word in list)
 				{
+					var digitalWord = "";
+
 					if (word.Number == digits)
 					{
 						digitalWord = word.Word;
 					}
+					if (word.Number == tens * 10)
+					{
+						digitalWord = word.Word;
+					}
+
+					if (digitalWord != "")
+					{
+						Console.WriteLine("Words: " + digitalWord);
+					}
 				}
 			}
+
+			Console.WriteLine("Digits: " + digits.ToString());
+			Console.WriteLine("Tens: " + tens.ToString());
+			Console.WriteLine("Hundrets: " + hundrets.ToString());
+			Console.WriteLine("Thousands: " + thousands.ToString());
 		}
 	}
 }
