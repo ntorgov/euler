@@ -29,8 +29,15 @@ namespace euler_0017
 			list.Add(new Words() { Word = "Nine", Number = 9 });
 			list.Add(new Words() { Word = "Ten", Number = 10 });
 
-			list.Add(new Words() { Word = "Elleven", Number = 11 });
+			list.Add(new Words() { Word = "Eleven", Number = 11 });
 			list.Add(new Words() { Word = "Twelve", Number = 12 });
+			list.Add(new Words() { Word = "Thirteen", Number = 13 });
+			list.Add(new Words() { Word = "Fourteen", Number = 14 });
+			list.Add(new Words() { Word = "Fifteen", Number = 15 });
+			list.Add(new Words() { Word = "Sixteen", Number = 16 });
+			list.Add(new Words() { Word = "Seventeen", Number = 17 });
+			list.Add(new Words() { Word = "Eighteen", Number = 18 });
+			list.Add(new Words() { Word = "Nineteen", Number = 19 });
 
 			list.Add(new Words() { Word = "Twenty", Number = 20 });
 			list.Add(new Words() { Word = "Thrity", Number = 30 });
@@ -41,16 +48,24 @@ namespace euler_0017
 			list.Add(new Words() { Word = "Eighty", Number = 80 });
 			list.Add(new Words() { Word = "Ninty", Number = 90 });
 
-			list.Add(new Words() { Word = "Hundreet", Number = 100 });
+			list.Add(new Words() { Word = "Hundred", Number = 100 });
 
 			#endregion
 
-			Parser(123);
+			var words = Parser(115);
+			var simple = words.Replace(" ", "").Replace("-", "");
+
+			Console.WriteLine("Length: " + simple.Length);
 
 			Console.WriteLine("Hello World!");
 		}
 
-		public static void Parser(int Number)
+		/// <summary>
+		/// Parser
+		/// </summary>
+		/// <param name="Number"></param>
+		/// <returns></returns>
+		public static string Parser(int Number)
 		{
 			string Value = Number.ToString();
 			int Length = Value.Length;
@@ -93,13 +108,9 @@ namespace euler_0017
 						digitalWord = word.Word;
 					}
 				}
-				if (hundrets > 1)
+				if (hundrets >= 1)
 				{
-					digitalWord += " Hundrets";
-				}
-				else
-				{
-					digitalWord += " Hundret";
+					digitalWord += " Hundred";
 				}
 
 				if (tens > 0 || digits > 0)
@@ -108,7 +119,7 @@ namespace euler_0017
 				}
 			}
 
-			if (tens > 0)
+			if (tens > 1)
 			{
 				foreach (var word in list)
 				{
@@ -124,33 +135,19 @@ namespace euler_0017
 			{
 				foreach (var word in list)
 				{
-					if (word.Number == digits)
+
+					if (tens == 1)
 					{
-						if (digits != 1 && digits != 2 & tens != 1)
+						if (word.Number == tens * 10 + digits)
 						{
-							if (tens > 1)
-							{
-								digitalWord += "-" + word.Word;
-							}
-							else if (tens == 1)
-							{
-								digitalWord += word.Word + "teen";
-							}
-							else
-							{
-								digitalWord += word.Word;
-							}
+							digitalWord += word.Word;
 						}
-						else
+					}
+					else
+					{
+						if (word.Number == digits)
 						{
-							if (digits == 1 && tens == 1)
-							{
-								digitalWord += "Elleven";
-							}
-							if (digits == 2 && tens == 1)
-							{
-								digitalWord += "Twelwe";
-							}
+							digitalWord += "-" + word.Word;
 						}
 					}
 				}
@@ -163,6 +160,8 @@ namespace euler_0017
 			Console.WriteLine("Tens: " + tens.ToString());
 			Console.WriteLine("Hundrets: " + hundrets.ToString());
 			Console.WriteLine("Thousands: " + thousands.ToString());
+
+			return digitalWord;
 		}
 	}
 }
