@@ -52,12 +52,20 @@ namespace euler_0017
 
 			#endregion
 
-			var words = Parser(115);
-			var simple = words.Replace(" ", "").Replace("-", "");
+			var Result = 0;
 
-			Console.WriteLine("Length: " + simple.Length);
+			for (var n = 1; n <= 1000; n++)
+			{
 
-			Console.WriteLine("Hello World!");
+				var words = Parser(1000);
+				var simple = words.Replace(" ", "").Replace("-", "");
+
+				Result = Result + simple.Length;
+				//Console.WriteLine("Length: " + simple.Length);
+			}
+
+			Console.WriteLine("Result is " + Result);
+			Console.ReadLine();
 		}
 
 		/// <summary>
@@ -98,6 +106,25 @@ namespace euler_0017
 			//else
 			//{
 			var digitalWord = "";
+			if (thousands > 0)
+			{
+				foreach (var word in list)
+				{
+					if (word.Number == thousands)
+					{
+						digitalWord = word.Word;
+					}
+				}
+				if (thousands >= 1)
+				{
+					digitalWord += " Thousand";
+				}
+
+				if (tens > 0 || digits > 0 || hundrets > 0)
+				{
+					digitalWord += " and ";
+				}
+			}
 
 			if (hundrets > 0)
 			{
@@ -156,10 +183,10 @@ namespace euler_0017
 
 			Console.WriteLine("In words: " + digitalWord);
 
-			Console.WriteLine("Digits: " + digits.ToString());
-			Console.WriteLine("Tens: " + tens.ToString());
-			Console.WriteLine("Hundrets: " + hundrets.ToString());
-			Console.WriteLine("Thousands: " + thousands.ToString());
+			//Console.WriteLine("Digits: " + digits.ToString());
+			//Console.WriteLine("Tens: " + tens.ToString());
+			//Console.WriteLine("Hundrets: " + hundrets.ToString());
+			//Console.WriteLine("Thousands: " + thousands.ToString());
 
 			return digitalWord;
 		}
