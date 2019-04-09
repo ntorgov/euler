@@ -38,6 +38,10 @@ namespace euler_0017
 			list.Add(new Words() { Word = "Fifty", Number = 50 });
 			list.Add(new Words() { Word = "Sixty", Number = 60 });
 			list.Add(new Words() { Word = "Seventy", Number = 70 });
+			list.Add(new Words() { Word = "Eighty", Number = 80 });
+			list.Add(new Words() { Word = "Ninty", Number = 90 });
+
+			list.Add(new Words() { Word = "Hundreet", Number = 100 });
 
 			#endregion
 
@@ -72,31 +76,88 @@ namespace euler_0017
 				thousands = int.Parse(Value.Substring(Length - 4, 1));
 			}
 
-			if (tens == 1 && (digits == 1 || digits == 2))
-			{
-				///
-			}
-			else
+			//if (tens == 1 && (digits == 1 || digits == 2))
+			//{
+			///
+			//}
+			//else
+			//{
+			var digitalWord = "";
+
+			if (hundrets > 0)
 			{
 				foreach (var word in list)
 				{
-					var digitalWord = "";
-
-					if (word.Number == digits)
+					if (word.Number == hundrets)
 					{
 						digitalWord = word.Word;
-					}
-					if (word.Number == tens * 10)
-					{
-						digitalWord = word.Word;
-					}
-
-					if (digitalWord != "")
-					{
-						Console.WriteLine("Words: " + digitalWord);
 					}
 				}
+				if (hundrets > 1)
+				{
+					digitalWord += " Hundrets";
+				}
+				else
+				{
+					digitalWord += " Hundret";
+				}
+
+				if (tens > 0 || digits > 0)
+				{
+					digitalWord += " and ";
+				}
 			}
+
+			if (tens > 0)
+			{
+				foreach (var word in list)
+				{
+					if (word.Number == tens * 10)
+					{
+						digitalWord += word.Word;
+					}
+				}
+
+			}
+
+			if (digits > 0)
+			{
+				foreach (var word in list)
+				{
+					if (word.Number == digits)
+					{
+						if (digits != 1 && digits != 2 & tens != 1)
+						{
+							if (tens > 1)
+							{
+								digitalWord += "-" + word.Word;
+							}
+							else if (tens == 1)
+							{
+								digitalWord += word.Word + "teen";
+							}
+							else
+							{
+								digitalWord += word.Word;
+							}
+						}
+						else
+						{
+							if (digits == 1 && tens == 1)
+							{
+								digitalWord += "Elleven";
+							}
+							if (digits == 2 && tens == 1)
+							{
+								digitalWord += "Twelwe";
+							}
+						}
+					}
+				}
+
+			}
+
+			Console.WriteLine("In words: " + digitalWord);
 
 			Console.WriteLine("Digits: " + digits.ToString());
 			Console.WriteLine("Tens: " + tens.ToString());
