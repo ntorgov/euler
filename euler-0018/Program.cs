@@ -5,10 +5,10 @@ namespace euler_0018
 	/// <summary>
 	/// <para>Начиная в вершине треугольника (см. пример ниже) и перемещаясь вниз на смежные числа, максимальная сумма до основания составляет 23.</para>
 	/// <example>
-	/// 3<para/>
-	/// 7 4<para/>
-	/// 2 4 6<para/>
-	/// 8 5 9 3<para/>
+	///    3
+	///   7 4
+	///  2 4 6
+	/// 8 5 9 3
 	/// </example>
 	///<para>То есть, 3 + 7 + 4 + 9 = 23.</para>
 	///<para>Найдите максимальную сумму пути от вершины до основания следующего треугольника:</para>
@@ -33,9 +33,32 @@ namespace euler_0018
 	/// </summary>
 	class Program
 	{
-
+		private static int[,] DataArray;
 		static void Main(string[] args)
 		{
+			DataArray = new int[,] {
+				{3, 0, 0, 0},
+				{7, 4, 0, 0},
+				{2, 4, 6, 0},
+				{8, 5, 9, 4}
+			};
+
+			var Result = 0;
+
+
+			for (var y = DataArray.GetLength(1) - 1; y >= 0; y--)
+			{
+				var maxRowValue = 0;
+				for (var x = 0; x <= DataArray.GetLength(0) - 1; x++)
+				{
+					var nearestRight = x;
+					var nearestLeft = x - 1;
+
+					maxRowValue = Math.Max(maxRowValue, DataArray[y, x]);
+				}
+				Console.WriteLine("Line: " + y + ", value: " + maxRowValue);
+			}
+
 			Console.WriteLine("Hello World!");
 		}
 	}
