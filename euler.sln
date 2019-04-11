@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0016", "..\euler-0016
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0017", "euler-0017\euler-0017.csproj", "{4F355FC3-F17E-4EE3-9369-0E7708745FEA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "euler-0001", "euler-0001\euler-0001.fsproj", "{282222AF-8715-4703-95EC-A8916CCDC81E}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "euler-0001", "euler-0001\euler-0001.fsproj", "{282222AF-8715-4703-95EC-A8916CCDC81E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0018", "euler-0018\euler-0018.csproj", "{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,14 @@ Global
 		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|x64.ActiveCfg = Release|Any CPU
 		{282222AF-8715-4703-95EC-A8916CCDC81E}.Release|x64.Build.0 = Release|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Debug|x64.Build.0 = Debug|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|x64.ActiveCfg = Release|Any CPU
+		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
