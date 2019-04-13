@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace euler_0018
 {
@@ -45,19 +47,73 @@ namespace euler_0018
 
 			var Result = 0;
 
+			int RouteLength = DataArray.GetLength(0) * DataArray.GetLength(1) / 4 * 3;
 
-			for (var y = DataArray.GetLength(1) - 1; y >= 0; y--)
+			int yLength = DataArray.GetLength(1);
+
+			List<RouteModel> Routes = new List<RouteModel>();
+
+			//for (var routeId = 0; routeId < RouteLength; routeId++)
+			//{
+			int Counter = 0;
+			for (var y = yLength - 1; y >= 0; y--)
 			{
 				var maxRowValue = 0;
 				for (var x = 0; x <= DataArray.GetLength(0) - 1; x++)
 				{
-					var nearestRight = x;
-					var nearestLeft = x - 1;
+					Counter++;
+					if (y - (yLength - 1) == 0)
+					{
+						Routes.Add(new RouteModel
+						{
+							PositionX = x,
+							PositionY = y,
+							Id = Counter,
+							Value = DataArray[y, x]
+						});
+
+						continue;
+					}
+
+					var nearestRight = x + 1;
+					var nearestLeft = x;
+
+					if (DataArray[y, x] == 0)
+					{
+						continue;
+					}
+					//for (var n = 0; n <= Routes.Count; n++)
+					//{
+					// берем маршруты снизу слева
+					List<RouteModel> leftRoutes = Routes.Where(s => s.PositionX.Equals(nearestLeft)).Where(s => s.PositionY.Equals(y + 1)).ToList();
+					foreach (var element in leftRoutes)
+					{
+						Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
+						Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
+						Routes.First(r => r.Id.Equals(element.Id)).Value += DataArray[y, x];
+					}
+
+
+					// берем маршруты снизу справа
+
+					List<RouteModel> rightRoutes = Routes.Where(r => r.PositionX.Equals(nearestRight)).Where(r => r.PositionY.Equals(y + 1)).ToList();
+
+					Routes.Add(new RouteModel
+					{
+						PositionX = x,
+						PositionY = y,
+						Id = Counter,
+						Value = rightRoutes.First().Value + DataArray[y, x]
+					});
+
+					Console.WriteLine("Line");
+					//}
 
 					maxRowValue = Math.Max(maxRowValue, DataArray[y, x]);
 				}
 				Console.WriteLine("Line: " + y + ", value: " + maxRowValue);
 			}
+			//}
 
 			Console.WriteLine("Hello World!");
 		}
