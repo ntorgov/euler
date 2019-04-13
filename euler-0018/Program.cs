@@ -45,7 +45,7 @@ namespace euler_0018
 				{8, 5, 9, 4}
 			};
 
-			var Result = 0;
+			long Result = 0;
 
 			int RouteLength = DataArray.GetLength(0) * DataArray.GetLength(1) / 4 * 3;
 
@@ -69,6 +69,7 @@ namespace euler_0018
 							PositionX = x,
 							PositionY = y,
 							Id = Counter,
+							LifeCycle = 0,
 							Value = DataArray[y, x]
 						});
 
@@ -90,7 +91,9 @@ namespace euler_0018
 					{
 						Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
 						Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
+						Routes.First(r => r.Id.Equals(element.Id)).LifeCycle++;
 						Routes.First(r => r.Id.Equals(element.Id)).Value += DataArray[y, x];
+
 					}
 
 
@@ -98,24 +101,43 @@ namespace euler_0018
 
 					List<RouteModel> rightRoutes = Routes.Where(r => r.PositionX.Equals(nearestRight)).Where(r => r.PositionY.Equals(y + 1)).ToList();
 
-					Routes.Add(new RouteModel
+					foreach (var element in rightRoutes)
 					{
-						PositionX = x,
-						PositionY = y,
-						Id = Counter,
-						Value = rightRoutes.First().Value + DataArray[y, x]
-					});
+
+						if (element.LifeCycle == 0)
+						{
+							Routes.Add(new RouteModel
+							{
+								PositionX = x,
+								PositionY = y,
+								Id = Counter,
+								LifeCycle = 1,
+								Value = rightRoutes.First().Value + DataArray[y, x]
+							});
+						}
+						else
+						{
+							Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
+							Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
+							Routes.First(r => r.Id.Equals(element.Id)).LifeCycle++;
+							Routes.First(r => r.Id.Equals(element.Id)).Value += DataArray[y, x];
+						}
+					}
 
 					Console.WriteLine("Line");
 					//}
 
 					maxRowValue = Math.Max(maxRowValue, DataArray[y, x]);
 				}
-				Console.WriteLine("Line: " + y + ", value: " + maxRowValue);
 			}
-			//}
 
-			Console.WriteLine("Hello World!");
+			foreach (var element in Routes)
+			{
+				Result = Math.Max(Result, element.Value);
+			}
+
+			Console.WriteLine("Result is: " + Result);
+			Console.ReadLine();
 		}
 	}
 }
