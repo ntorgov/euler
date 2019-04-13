@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace euler_0018
 {
@@ -71,8 +69,6 @@ namespace euler_0018
 
 			int yLength = DataArray.GetLength(1);
 
-			List<RouteModel> Routes = new List<RouteModel>();
-
 			int Counter = 0;
 			for (var y = yLength - 1; y >= 0; y--)
 			{
@@ -82,76 +78,24 @@ namespace euler_0018
 					Counter++;
 					if (y - (yLength - 1) == 0)
 					{
-						Routes.Add(new RouteModel
-						{
-							PositionX = x,
-							PositionY = y,
-							Id = Counter,
-							LifeCycle = 0,
-							Value = DataArray[y, x]
-						});
-
 						continue;
 					}
-
-					var nearestRight = x + 1;
-					var nearestLeft = x;
 
 					if (DataArray[y, x] == 0)
 					{
 						continue;
 					}
 
-					// берем маршруты снизу слева
-					List<RouteModel> leftRoutes = Routes.Where(s => s.PositionX.Equals(nearestLeft)).Where(s => s.PositionY.Equals(y + 1)).ToList();
-					foreach (var element in leftRoutes)
-					{
-						Counter++;
-						Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
-						Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
-						Routes.First(r => r.Id.Equals(element.Id)).LifeCycle++;
-						Routes.First(r => r.Id.Equals(element.Id)).Value += DataArray[y, x];
+					var nearestRight = x + 1;
+					var nearestLeft = x;
 
-					}
+					var neightborMax = Math.Max(DataArray[y + 1, nearestLeft], DataArray[y + 1, nearestRight]);
+					DataArray[y, x] = DataArray[y, x] + neightborMax;
 
-
-					// берем маршруты снизу справа
-
-					List<RouteModel> rightRoutes = Routes.Where(r => r.PositionX.Equals(nearestRight)).Where(r => r.PositionY.Equals(y + 1)).ToList();
-
-					foreach (var element in rightRoutes)
-					{
-						Counter++;
-						if (element.LifeCycle == 0)
-						{
-							Routes.Add(new RouteModel
-							{
-								PositionX = x,
-								PositionY = y,
-								Id = Counter,
-								LifeCycle = 1,
-								Value = rightRoutes.First().Value + DataArray[y, x]
-							});
-						}
-						else
-						{
-							Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
-							Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
-							Routes.First(r => r.Id.Equals(element.Id)).LifeCycle++;
-							Routes.First(r => r.Id.Equals(element.Id)).Value += DataArray[y, x];
-						}
-					}
-
-					maxRowValue = Math.Max(maxRowValue, DataArray[y, x]);
 				}
 			}
 
-			foreach (var element in Routes)
-			{
-				Result = Math.Max(Result, element.Value);
-			}
-
-			Console.WriteLine("Result is: " + Result);
+			Console.WriteLine("Result is: " + DataArray[0, 0]);
 			Console.ReadLine();
 		}
 	}
