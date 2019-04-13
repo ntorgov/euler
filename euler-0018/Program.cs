@@ -106,6 +106,7 @@ namespace euler_0018
 					List<RouteModel> leftRoutes = Routes.Where(s => s.PositionX.Equals(nearestLeft)).Where(s => s.PositionY.Equals(y + 1)).ToList();
 					foreach (var element in leftRoutes)
 					{
+						Counter++;
 						Routes.First(r => r.Id.Equals(element.Id)).PositionX = x;
 						Routes.First(r => r.Id.Equals(element.Id)).PositionY = y;
 						Routes.First(r => r.Id.Equals(element.Id)).LifeCycle++;
@@ -120,7 +121,7 @@ namespace euler_0018
 
 					foreach (var element in rightRoutes)
 					{
-
+						Counter++;
 						if (element.LifeCycle == 0)
 						{
 							Routes.Add(new RouteModel
