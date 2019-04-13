@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0017", "euler-0017\eu
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "euler-0001", "euler-0001\euler-0001.fsproj", "{282222AF-8715-4703-95EC-A8916CCDC81E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0018", "euler-0018\euler-0018.csproj", "{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0018", "euler-0018\euler-0018.csproj", "{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0067", "euler-0067\euler-0067.csproj", "{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,14 @@ Global
 		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|x64.ActiveCfg = Release|Any CPU
 		{1FA1F95A-1CF8-4B3E-8474-92BD35B09E4A}.Release|x64.Build.0 = Release|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Debug|x64.Build.0 = Debug|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Release|x64.ActiveCfg = Release|Any CPU
+		{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
