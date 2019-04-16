@@ -15,9 +15,34 @@ namespace euler_0019
 	/// </summary>
 	class Program
 	{
+		#region Known date
+
+		private static readonly int StartKnownDay = 1;
+		private static readonly int StartKnownDate = 1;
+		private static readonly int StartKnownMonth = 1;
+		private static readonly int StartKnownYear = 1900;
+
+		#endregion
+
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
+		}
+
+		static bool IsLeap(int Year)
+		{
+			var result = false;
+
+			if (Year % 4 == 0)
+			{
+				result = true;
+			}
+			if (Year % 100 == 0 && Year % 400 == 0)
+			{
+				result = true;
+			}
+
+			return result;
 		}
 	}
 }
