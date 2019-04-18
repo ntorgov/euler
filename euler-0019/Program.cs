@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace euler_0019
 {
@@ -17,16 +18,96 @@ namespace euler_0019
 	{
 		#region Known date
 
+		/// <summary>
+		/// День недели
+		/// </summary>
 		private static readonly int StartKnownDay = 1;
+
+		/// <summary>
+		/// Число
+		/// </summary>
 		private static readonly int StartKnownDate = 1;
+
+		/// <summary>
+		/// Месяц
+		/// </summary>
 		private static readonly int StartKnownMonth = 1;
+
+		/// <summary>
+		/// Год
+		/// </summary>
 		private static readonly int StartKnownYear = 1900;
 
 		#endregion
 
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var Year = StartKnownYear;
+			var Month = StartKnownMonth;
+			var Day = StartKnownDay;
+			var Date = StartKnownDate;
+			var dayCounter = 0;
+
+			var ResultCounter = 0;
+
+			List<Dates> MemoryEater = new List<Dates>();
+			List<Dates> CorrectDates = new List<Dates>();
+
+			while (Year <= 2000 && Month <= 12 && Date <= 31)
+			{
+
+				if (Year >= 1901 && Month >= 1 && Date >= 1)
+				{
+					if (Date == 1 && Day == 7)
+					{
+						ResultCounter++;
+						CorrectDates.Add(new Dates()
+						{
+							Year = Year,
+							Month = Month,
+							Date = Date
+						});
+						Console.WriteLine("Day: " + Day + ", Date: " + Year + "-" + Month + "-" + Date);
+					}
+				}
+
+				dayCounter++;
+				Date++;
+				Day++;
+
+				var isLeapYear = IsLeap(Year);
+
+				if ((Date > 31 && (Month == 1 || Month == 3 || Month == 4 || Month == 5 || Month == 7 || Month == 8 || Month == 10 || Month == 12)) ||
+					(Date > 29 && isLeapYear && Month == 2) ||
+					(Date > 22 && !isLeapYear && Month == 2) ||
+					(Date > 30 && (Month == 4 || Month == 6 || Month == 9 || Month == 11)))
+				{
+					Date = 1;
+					Month++;
+				}
+
+				if (Month > 12)
+				{
+					Month = 1;
+					Year++;
+				}
+
+				if (Day > 7)
+				{
+					Day = 1;
+				}
+
+				MemoryEater.Add(new Dates()
+				{
+					Year = Year,
+					Month = Month,
+					Date = Date
+				});
+			}
+
+			Console.WriteLine("Result is " + ResultCounter);
+
+			Console.ReadLine();
 		}
 
 		static bool IsLeap(int Year)
