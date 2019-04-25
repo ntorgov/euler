@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0018", "euler-0018\eu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0067", "euler-0067\euler-0067.csproj", "{DD34086F-BE9A-4993-AB29-CD2F8D60C92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0019", "euler-0019\euler-0019.csproj", "{AED1E811-BACF-40DB-8B0D-B0C9C83BA58C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0019", "euler-0019\euler-0019.csproj", "{AED1E811-BACF-40DB-8B0D-B0C9C83BA58C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0020", "..\euler-0020\euler-0020\euler-0020.csproj", "{811737D4-F382-4BEB-BA28-A8A46F2F4359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +163,14 @@ Global
 		{AED1E811-BACF-40DB-8B0D-B0C9C83BA58C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AED1E811-BACF-40DB-8B0D-B0C9C83BA58C}.Release|x64.ActiveCfg = Release|Any CPU
 		{AED1E811-BACF-40DB-8B0D-B0C9C83BA58C}.Release|x64.Build.0 = Release|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Debug|x64.Build.0 = Debug|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Release|x64.ActiveCfg = Release|Any CPU
+		{811737D4-F382-4BEB-BA28-A8A46F2F4359}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
