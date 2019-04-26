@@ -14,9 +14,6 @@ namespace euler_0021
 				var result1 = Devisors(initial);
 				var result2 = Devisors(result1);
 
-				//Console.WriteLine("Result: " + result1);
-				//Console.WriteLine("Initial: " + initial);
-
 				if (result2 == initial && result1!=result2)
 				{
 					Console.WriteLine(result1 + " and " + result2);
@@ -36,11 +33,7 @@ namespace euler_0021
 			{
 				if (Number % n == 0)
 				{
-					//if ((Number /n)% 2 == 0)
-					//{
-					//Console.WriteLine(n);
 					result = result + n;
-					//}
 				}
 			}
 
