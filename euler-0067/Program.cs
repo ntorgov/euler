@@ -47,7 +47,6 @@ namespace euler_0067
 
 			for (var y = yLength - 1; y >= 0; y--)
 			{
-				var maxRowValue = 0;
 				for (var x = 0; x <= (inputTriangle.GetLength(0) - 1); x++)
 				{
 					if (y - (yLength - 1) == 0)
