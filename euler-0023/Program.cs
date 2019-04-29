@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace euler_0023
 {
@@ -10,29 +11,61 @@ namespace euler_0023
     /// </summary>
     class Program
     {
+        private const int MaxValue = 28123;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
-
-        private static int Deviders(long Number)
-        {
-            int nod = 0;
-            int sqrt = (int) Math.Sqrt(Number);
-
-            for (int i = 1; i <= sqrt; i++)
+            var resultArray = new int[MaxValue * 2 + 1];
+            for (var n = 1; n < MaxValue; n++)
             {
-                if (Number % i == 0)
+                resultArray[n] = 1;
+            }
+
+            for (var n = 1; n < MaxValue; n++)
+            {
+                var value = Deviders(n);
+                if (value > n)
                 {
-                    nod += 2;
+                    var sum = value * 2;
+
+                    if (sum <= MaxValue)
+                    {
+                        resultArray[sum] = 0;
+                    }
                 }
             }
 
-            //Correction if the number is a perfect square
-            if (sqrt * sqrt == Number)
+            BigInteger Result = 0;
+            for (var n = 1; n < MaxValue; n++)
             {
-                nod--;
+                if (resultArray[n] == 1)
+                {
+                    Result = Result + n;
+                }
             }
+
+            Console.WriteLine("Result: " + Result);
+            Console.ReadLine();
+        }
+
+        private static int Deviders(int number)
+        {
+            int nod = 0;
+
+//       int sqrt = (int) Math.Sqrt(number);
+
+            for (int i = 1; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    nod += i;
+                }
+            }
+
+//            if (sqrt * sqrt == number)
+//           {
+//              nod += sqrt;
+//         }
 
             return nod;
         }
