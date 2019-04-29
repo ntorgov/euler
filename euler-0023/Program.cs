@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace euler_0023
@@ -15,30 +16,38 @@ namespace euler_0023
 
         static void Main(string[] args)
         {
-            var resultArray = new int[MaxValue * 2 + 1];
-            for (var n = 1; n < MaxValue; n++)
+            BigInteger Result = 0;
+            
+            var resultArray = new bool[MaxValue * 2 + 1];
+            for (var n = 1; n <= MaxValue; n++)
             {
-                resultArray[n] = 1;
+                resultArray[n] = false;
             }
 
-            for (var n = 1; n < MaxValue; n++)
-            {
-                var value = Deviders(n);
-                if (value > n)
-                {
-                    var sum = value * 2;
+            var Abundant = new List<BigInteger>();
 
-                    if (sum <= MaxValue)
-                    {
-                        resultArray[sum] = 0;
-                    }
+            for (var n = 1; n <= MaxValue; n++)
+            {
+                var value = new LocalMath(n);
+
+                if (value.IsAbundant)
+                {
+                    Abundant.Add(n);
                 }
             }
 
-            BigInteger Result = 0;
-            for (var n = 1; n < MaxValue; n++)
+            foreach (var x in Abundant)
             {
-                if (resultArray[n] == 1)
+                foreach (var y in Abundant)
+                {
+                    var index = x + y;
+                    resultArray[(int)index] = true;
+                }
+            }
+            
+            for (var n = 1; n <= MaxValue; n++)
+            {
+                if (!resultArray[n])
                 {
                     Result = Result + n;
                 }
@@ -46,28 +55,6 @@ namespace euler_0023
 
             Console.WriteLine("Result: " + Result);
             Console.ReadLine();
-        }
-
-        private static int Deviders(int number)
-        {
-            int nod = 0;
-
-//       int sqrt = (int) Math.Sqrt(number);
-
-            for (int i = 1; i < number; i++)
-            {
-                if (number % i == 0)
-                {
-                    nod += i;
-                }
-            }
-
-//            if (sqrt * sqrt == number)
-//           {
-//              nod += sqrt;
-//         }
-
-            return nod;
         }
     }
 }
