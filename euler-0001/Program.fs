@@ -1,13 +1,11 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
 
 // What's a fuck???
 let isValid value =
     //let Result = false;
 
-    let is_Three =(value % 3) = 0;
-    let is_Five =(value % 5) = 0;
+    let is_Three = (value % 3) = 0;
+    let is_Five = (value % 5) = 0;
 
     let mutable Result = (is_Three || is_Five)
 
