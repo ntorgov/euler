@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler", "euler\euler.csproj", "{753E3138-4AC2-4B8E-B538-F4859A0D342E}"
 EndProject
@@ -45,7 +45,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "euler-0005", "euler-0005\eu
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "euler-0006", "euler-0006\euler-0006.fsproj", "{FB5A6021-EC97-43AA-A60B-269C08512ECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0025", "euler-0025\euler-0025.csproj", "{10863A11-0601-45A0-900A-39C918EFCF9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "euler-0025", "euler-0025\euler-0025.csproj", "{10863A11-0601-45A0-900A-39C918EFCF9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "euler-0026", "euler-0026\euler-0026.csproj", "{00DC1566-F199-4947-9C8A-812BAFE4B02D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,14 @@ Global
 		{10863A11-0601-45A0-900A-39C918EFCF9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10863A11-0601-45A0-900A-39C918EFCF9B}.Release|x64.ActiveCfg = Release|Any CPU
 		{10863A11-0601-45A0-900A-39C918EFCF9B}.Release|x64.Build.0 = Release|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Debug|x64.Build.0 = Debug|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Release|x64.ActiveCfg = Release|Any CPU
+		{00DC1566-F199-4947-9C8A-812BAFE4B02D}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
