@@ -6,9 +6,9 @@ namespace euler_0026
 {
 	class Program
 	{
-		private static string rightPart;
+		private static string _rightPart;
 
-		private static string longestPart = "";
+		private static string _longestPart = "";
 
 		static void Main(string[] args)
 		{
@@ -18,12 +18,12 @@ namespace euler_0026
 				var numbers = result.ToString().Split('.');
 				if (numbers.Length > 1)
 				{
-					rightPart = numbers[1];
+					_rightPart = numbers[1];
 
 					Console.WriteLine("Value: " + d);
-					Parallel.For(0, rightPart.Length, Check);
+					Parallel.For(0, _rightPart.Length, Check);
 
-					Console.WriteLine("Right part: " + rightPart);
+					Console.WriteLine("Right part: " + _rightPart);
 				}
 			}
 
@@ -34,22 +34,22 @@ namespace euler_0026
 		{
 			var localLongest = "";
 
-			for (var t = 0; t < rightPart.Length - n; t++)
+			for (var t = 0; t < _rightPart.Length - n; t++)
 			{
-				var substr = rightPart.Substring(0, t);
-				if (rightPart.Length > (substr.Length * 2) + n)
+				var substr = _rightPart.Substring(0, t);
+				if (_rightPart.Length > (substr.Length * 2) + n)
 				{
-					var part = rightPart.Substring(n, substr.Length * 2);
+					var part = _rightPart.Substring(n, substr.Length * 2);
 					if (substr + substr == part)
 					{
 						if (substr.Length > localLongest.Length)
 						{
 							var needToReplace = true;
-							var syntizedString = substr;
-							for (var c = 2; c < Math.Floor((decimal)(rightPart.Length / substr.Length)); c++)
+							var sintizedString = substr;
+							for (var c = 2; c < Math.Floor((decimal)(_rightPart.Length / substr.Length)); c++)
 							{
-								syntizedString = syntizedString + substr;
-								if (localLongest == syntizedString)
+								sintizedString = sintizedString + substr;
+								if (localLongest == sintizedString)
 								{
 									needToReplace = false;
 								}
@@ -63,9 +63,9 @@ namespace euler_0026
 				}
 			}
 
-			if (longestPart.Length < localLongest.Length)
+			if (_longestPart.Length < localLongest.Length)
 			{
-				longestPart = localLongest;
+				_longestPart = localLongest;
 			}
 		}
 	}
